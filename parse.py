@@ -9,11 +9,13 @@ import argparse
 
 # Lataa sanalista osoitteesta
 # http://kaino.kotus.fi/sanat/nykysuomi/kotus-sanalista-v1.tar.gz
-wordlist = 'kotus-sanalista_v1.xml'
 
-parser = argparse.ArgumentParser(description='Etsi sanapäätteitä kotuksen listasta.')
-parser.add_argument('paate', type=str, help='etsittävä pääte')
+parser = argparse.ArgumentParser(description='Find words ending with specific letters.')
+parser.add_argument('ending', type=str, help='String to find at the end of the word')
+parser.add_argument("--wordlist", default='kotus-sanalista_v1.xml', type=str, help="Add custom word list (default kotus-sanalista_v1.xml)")
 args = parser.parse_args()
+
+wordlist = args.wordlist
 
 if args.paate:
     ending = args.paate
