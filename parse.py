@@ -17,8 +17,8 @@ args = parser.parse_args()
 
 wordlist = args.wordlist
 
-if args.paate:
-    ending = args.paate
+if args.ending:
+    ending = args.ending
     e = xml.etree.ElementTree.parse(wordlist).getroot()
     pattern = re.escape(ending)
 
